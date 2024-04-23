@@ -1,3 +1,73 @@
 Home Page -  Contatos, Apresentação - Quem somos, Serviços - Venda de bilhetes
 
+Wireframes para Desktop:
+Página Inicial:
 
+    Header: Contém o logo da aplicação e links de navegação.
+    Corpo Principal: Apresenta os principais destaques, notícias ou informações relevantes.
+    Barra Lateral: Contém links para diferentes seções da aplicação.
+    Rodapé: Inclui links adicionais, informações de contato e links para mídias sociais.
+
+Página de Conteúdo:
+
+    Header: Mesmo que na página inicial.
+    Conteúdo Principal: Texto ou imagens relacionadas ao conteúdo selecionado.
+    Barra Lateral: Opções de navegação e filtro de conteúdo.
+    Rodapé: Mesmo que na página inicial.
+
+Página de Formulário:
+
+    Header: Mesmo que na página inicial.
+    Formulário: Campos para inserção de informações.
+    Barra Lateral: Links para outras partes da aplicação.
+    Rodapé: Mesmo que na página inicial.
+
+Wireframes para Dispositivos Móveis:
+Página Inicial:
+
+    Menu Hamburguer: Para acessar as opções de navegação.
+    Conteúdo Principal: Adaptação do conteúdo principal para uma única coluna.
+    Rodapé: Reduzido para economizar espaço.
+
+Página de Conteúdo:
+
+    Menu Hamburguer: Mesmo que na página inicial.
+    Conteúdo Principal: Adaptação do conteúdo para uma única coluna.
+    Barra Lateral: Pode ser acessada por um botão de filtro ou expandir/collapsar.
+
+Página de Formulário:
+
+    Menu Hamburguer: Mesmo que na página inicial.
+    Formulário: Adaptação dos campos para facilitar a entrada de dados em dispositivos móveis.
+    Barra Lateral: Mesmo que na página de conteúdo.
+
+
+
+Wireflow para Utilizador Regular:
+Story: Visualizar Notícias
+
+    Utilizador Regular acessa a Página Inicial
+    Navega pelas notícias em destaque ou usa a barra lateral para explorar diferentes seções.
+    Ao encontrar uma notícia de interesse, clica nela.
+    É redirecionado para a Página de Conteúdo, onde pode ler a notícia na íntegra.
+
+Wireflow para Utilizador Novo:
+Story: Criar uma Conta
+
+    Utilizador Novo acessa a Página Inicial
+    Clica em "Criar Conta" no cabeçalho.
+    É redirecionado para a Página de Registro.
+    Preenche o formulário com seus dados.
+    Clica em "Registrar".
+    Recebe uma confirmação e é redirecionado de volta para a Página Inicial.
+
+Wireflow para Utilizador Administrador:
+Story: Adicionar uma Nova Notícia
+
+    Utilizador Administrador acessa a Página Inicial
+    Clica em "Administrar" no cabeçalho.
+    É redirecionado para a Área Administrativa.
+    Seleciona "Adicionar Notícia".
+    Preenche os campos com o título, conteúdo e categoria da notícia.
+    Clica em "Enviar".
+    A notícia é adicionada com sucesso e o administrador é redirecionado de volta para a Área Administrativa.
