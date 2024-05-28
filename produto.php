@@ -14,7 +14,7 @@ $cols = "Marca, Modelo, Preco";
 $query = "SELECT $cols FROM produtos";
 $res = $db->querySingle($query, true);
 $db->close();
-echo "<h1>Comprar</h1>\n";
+echo "<h1>Comprar Bilhetes Serafim</h1>\n";
 echo "<form method='GET' action='confirmar.php'>\n"; // Correção aqui
 echo "<table>\n";
 foreach( $res as $n => $v ) {
@@ -43,19 +43,45 @@ function calc_total() {
 <th>Nome:</th>
 <td> <input name='nome' type='text' size=30 required> </td>
 </tr>
+
+<tr>
+<th>E-mail:</th>
+<td> <input name='morada' type='text' size=30 required> </td>
+</tr>
+
+<tr>
+<th>Número de Telemóvel:</th>
+<td> <input name='morada' type='text' size=30 required> </td>
+</tr>
+
+<tr>
+<th>Data de Nascimento:</th>
+<td> <input name='morada' type='text' size=30 required> </td>
+</tr>
+
 <tr>
 <th>Morada:</th>
 <td> <input name='morada' type='text' size=30 required> </td>
 </tr>
 
 <tr>
-<th>Quantidade:</th>
-<td> <input name='quantidade' type='number' onchange='calc_total()' size=3 min=0 max=10> <!-- Correção aqui -->
+<th>Código-Postal:</th>
+<td> <input name='morada' type='text' size=30 required> </td>
+</tr>
+
+<tr>
+<th>País:</th>
+<td> <input name='morada' type='text' size=30 required> </td>
+</tr>
+
+<tr>
+<th>Quantidade de bilhetes:</th>
+<td> <input name='quantidade' type='number' onchange='calc_total()' size=3 min=0 max=7> <!-- Correção aqui -->
  </td>
 </tr>
 
 <tr>
 <th>Total:</th>
-<td> <input name='total' type='number' size=3> </td>
+<td> <input name='total' type='number' size=3 min=0 max=7> </td>
 </tr>
 
