@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        .error {
+            border: 2px solid red;
+            background-color: #fdd;
+        }
+    </style>
+    <script>
+        function validateEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            return emailPattern.test(email);
+        }
+
+        function validatePassword(password) {
+            return password.length >= 6;
+        }
+
+        function validateLoginForm() {
+            var emailField = document.getElementById('email');
+            var passwordField = document.getElementById('password');
+            var isValid = true;
+
+            if (!validateEmail(emailField.value)) {
+                emailField.classList.add('error');
+                isValid = false;
+            } else {
+                emailField.classList.remove('error');
+            }
+
+            if (!validatePassword(passwordField.value)) {
+                passwordField.classList.add('error');
+                isValid = false;
+            } else {
+                passwordField.classList.remove('error');
+            }
+
+            return isValid;
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            if (validateLoginForm()) {
+                // Simulação de login bem-sucedido
+                alert('Login bem-sucedido!');
+                // Redirecionar para a página principal (simulada)
+                window.location.href = 'profile.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="handleLogin(event)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
+

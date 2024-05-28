@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produtos</title>
+    <style>
+        .error {
+            border: 2px solid red;
+            background-color: #fdd;
+        }
+    </style>
+    <script>
+        var products = [
+            { id: 1, name: 'Produto A', price: 100, category: 'Categoria 1' },
+            { id: 2, name: 'Produto B', price: 200, category: 'Categoria 2' },
+            { id: 3, name: 'Produto C', price: 150, category: 'Categoria 1' },
+            { id: 4, name: 'Produto D', price: 300, category: 'Categoria 3' }
+        ];
+
+        function displayProducts(filteredProducts) {
+            var container = document.getElementById('productList');
+            container.innerHTML = '';
+            filteredProducts.forEach(function(product) {
+                var productItem = document.createElement('div');
+                productItem.innerText = product.name + ' - R$' + product.price + ' (' + product.category + ')';
+                container.appendChild(productItem);
+            });
+        }
+
+        function filterProducts() {
+            var nameFilter = document.getElementById('nameFilter').value.toLowerCase();
+            var categoryFilter = document.getElementById('categoryFilter').value;
+            var priceFilter = document.getElementById('priceFilter').value;
+
+            var filteredProducts = products.filter(function(product) {
+                return (
+                    product.name.toLowerCase().includes(nameFilter) &&
+                    (categoryFilter === 'all' || product.category === categoryFilter) &&
+                    product.price <= priceFilter
+                );
+            });
+
+            displayProducts(filteredProducts);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            displayProducts(products);
+            document.getElementById('filterForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                filterProducts();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Produtos</h1>
+    <form id="filterForm">
+        <label for="nameFilter">Pesquisa por nome:</label>
+        <input type="text" id="nameFilter" name="nameFilter">
+        
+        <label for="categoryFilter">Categoria:</label>
+        <select id="categoryFilter" name="categoryFilter">
+            <option value="all">Todas</option>
+            <option value="Categoria 1">Categoria 1</option>
+            <option value="Categoria 2">Categoria 2</option>
+            <option value="Categoria 3">Categoria 3</option>
+            <!-- Mais opções -->
+        </select>
+        
+        <label for="priceFilter">Faixa de preço:</label>
+        <input type="range" id="priceFilter" name="priceFilter" min="0" max="500" step="10">
+        
+        <button type="submit">Filtrar</button>
+    </form>
+    <div id="productList"></div>
+</body>
+</html>
+

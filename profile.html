@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <style>
+        .error {
+            border: 2px solid red;
+            background-color: #fdd;
+        }
+    </style>
+    <script>
+        function validateName(name) {
+            return name.trim() !== '';
+        }
+
+        function validateBio(bio) {
+            return bio.length <= 200;
+        }
+
+        function validateProfileForm() {
+            var nameField = document.getElementById('name');
+            var bioField = document.getElementById('bio');
+            var isValid = true;
+
+            if (!validateName(nameField.value)) {
+                nameField.classList.add('error');
+                isValid = false;
+            } else {
+                nameField.classList.remove('error');
+            }
+
+            if (!validateBio(bioField.value)) {
+                bioField.classList.add('error');
+                isValid = false;
+            } else {
+                bioField.classList.remove('error');
+            }
+
+            return isValid;
+        }
+
+        function updateProfile() {
+            if (!validateProfileForm()) {
+                return;
+            }
+            var name = document.getElementById('name').value;
+            var bio = document.getElementById('bio').value;
+            document.getElementById('displayName').innerText = name;
+            document.getElementById('displayBio').innerText = bio;
+        }
+    </script>
+</head>
+<body>
+    <h1>Perfil</h1>
+    <form onsubmit="event.preventDefault(); updateProfile();">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" maxlength="200"></textarea>
+        <button type="submit">Atualizar Perfil</button>
+    </form>
+    <div>
+        <h2>Informações do Perfil</h2>
+        <p>Nome: <span id="displayName"></span></p>
+        <p>Bio: <span id="displayBio"></span></p>
+    </div>
+</body>
+</html>
+
