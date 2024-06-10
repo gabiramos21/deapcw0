@@ -1,0 +1,26 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo_pedido.css">
+    <title>Realizar Pedido</title>
+</head>
+<body>
+    <h1>Realizar Pedido</h1>
+    <form action="encomenda.php" method="get">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="morada">Morada:</label>
+        <input type="text" id="morada" name="morada" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telemovel">Número de Telemóvel:</label>
+        <input type="tel" id="telemovel" name="telemovel" required pattern="[0-9]{9}" maxlength="9">
+
+        <input type="submit" value="Fazer Pedido" class="button">
+    </form>
+</body>
+</html>
+

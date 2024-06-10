@@ -1,10 +1,11 @@
-<html>
+<html lang="pt">
 	<head>
 		<link rel="stylesheet" href="loja.css">
+		<h2 style="text-align: center;">Bilhetes de Cinema Ticketfolia</h2>
 	</head>
 	<body style="background-image: linear-gradient(45deg, red, grey)>
-		<h1 style="color: blue"> Bilhetes de Cinema TicketFolia </h1>
-		<p>Somos uma loja de bilhetes de cinema <u>recém-criada</u> e estamos presentes nos mais variados shoppings do país.</p>
+			<h1 style="titulo">Bilhetes de Cinema TicketFolia</span></h1>
+		<p> Somos uma loja de bilhetes de cinema <u>recém-criada</u> e estamos presentes nos mais variados shoppings do país.</p>
 		<strong>Garante já o teu bilhete!</strong>
 		<hr>
 		
@@ -40,11 +41,23 @@
 		      <td>6,40€</td>
 		 </tr>
 	      </table>
-   		   
-   		   
-   	       <table>
+        	<section id="form-section">
+            	<h2>Reserve os Seus Bilhetes</h2>
+            	<form action="processar_pedido.html" method="get">
+                	<label for="quantidade">Quantidade de Bilhetes:</label>
+                	<input type="number" id="quantidade" name="quantidade" min="1" required>
+                
+                	<label for="tipo">Tipo de Bilhete:</label>
+                	<select id="tipo" name="tipo" required>
+                    		<option value="adulto">Adulto</option>
+                    		<option value="familia">Pack Família</option>
+                    		<option value="jovem">Cartão Jovem</option>
+                    		<option value="idoso">Maiores 65</option>
+                    		<option value="crianca">Crianças até 12</option>
+                	</select>
+                
+                	<button type="submit">Reservar</button>
+            	</form>
+        	</section>  
    	 </body>
 </html>
-   
-
-
