@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Realizar Pedido</h1>
-    <form action="encomenda.php" method="get">
+    <form id="pedidoForm" action="processar_pedido.html" method="post">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
@@ -19,8 +19,14 @@
         <label for="telemovel">Número de Telemóvel:</label>
         <input type="tel" id="telemovel" name="telemovel" required pattern="[0-9]{9}" maxlength="9">
 
+        <label for="metodo-pagamento">Método de Pagamento:</label>
+        <select id="metodo-pagamento" name="metodo_pagamento">
+            <option value="mbway">MBWay</option>
+            <option value="paypal">PayPal</option>
+            <option value="cartao">Cartão de Crédito</option>
+        </select>
+
         <input type="submit" value="Fazer Pedido" class="button">
     </form>
 </body>
 </html>
-
